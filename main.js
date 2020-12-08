@@ -59,33 +59,32 @@ var DevGizmos = {
         $.ajax({
             url: "Content/Pages/" + name + ".html?r=" + JSHelpers.generateGuid(),
             type: "GET",
-            async: false,
+            async: true,
             success: function (view) {
                 _view = view;
-            },
-            error: DevGizmos.displayAjaxError
-        });
-
-        $.ajax({
-            url: "Controller/Pages/" + name + ".js?r=" + JSHelpers.generateGuid(),
-            type: "GET",
-            async: false,
-            success: function (js) {
-                _js = js;
-
-                var element = document.getElementById("ContentScript");
-                if (element != null) {
-                    element.parentNode.removeChild(element);
-                }
-
-                var script = document.createElement("script");
-                script.id = "ContentScript";
-                script.innerHTML = _js;
-                document.body.appendChild(script);
-
-                if (_view != null && _js != null) {
-                    window["Load" + name](_view);
-                }
+                $.ajax({
+                    url: "Controller/Pages/" + name + ".js?r=" + JSHelpers.generateGuid(),
+                    type: "GET",
+                    async: true,
+                    success: function (js) {
+                        _js = js;
+        
+                        var element = document.getElementById("ContentScript");
+                        if (element != null) {
+                            element.parentNode.removeChild(element);
+                        }
+        
+                        var script = document.createElement("script");
+                        script.id = "ContentScript";
+                        script.innerHTML = _js;
+                        document.body.appendChild(script);
+        
+                        if (_view != null && _js != null) {
+                            window["Load" + name](_view);
+                        }
+                    },
+                    error: DevGizmos.displayAjaxError
+                });
             },
             error: DevGizmos.displayAjaxError
         });
