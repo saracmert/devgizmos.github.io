@@ -11,14 +11,14 @@ function LoadJSONCtoJSON(view) {
         DevGizmos.contentData.editor1 = monaco.editor.create(document.getElementById('editor1'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs-dark',
+            theme: 'vs',
             wordWrap: 'on'
         });
 
         DevGizmos.contentData.editor2 = monaco.editor.create(document.getElementById('editor2'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs-dark',
+            theme: 'vs',
             wordWrap: 'on',
             readOnly: true
         });
