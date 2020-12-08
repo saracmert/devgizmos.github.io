@@ -1,0 +1,21 @@
+.LoaderOverlay{
+    width:200%;
+    height:100%;
+    z-index:10;
+    position:fixed;
+    top:0;
+    opacity:.4;
+    display:block;
+    background-color:#000;
+    left:-100%
+}
+
+span.LoadingText{
+    position:fixed;
+    top:40%;
+    left:40%;
+    color:#fff;
+    font-size:20px;
+    width:20%;
+    text-align:center
+}
