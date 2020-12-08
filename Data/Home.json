@@ -3,5 +3,10 @@
         "Name": "JSONC to JSON Converter",
         "Description": "Lorem ipsum dolor sit amet.",
         "Page": "JSONCtoJSON"
+    },
+    {
+        "Name": "JSON Beautifier",
+        "Description": "Lorem ipsum dolor sit amet.",
+        "Page": "JSONBeautifier"
     }
 ]
