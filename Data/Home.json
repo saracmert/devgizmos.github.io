@@ -1,12 +1,12 @@
 [
     {
         "Name": "JSONC to JSON Converter",
-        "Description": "Lorem ipsum dolor sit amet.",
+        "Description": "Convert your JSONC files to valid JSON files.",
         "Page": "JSONCtoJSON"
     },
     {
         "Name": "JSON Beautifier",
-        "Description": "Lorem ipsum dolor sit amet.",
+        "Description": "Beautify your JSON files.",
         "Page": "JSONBeautifier"
     }
 ]

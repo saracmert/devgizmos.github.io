@@ -25,6 +25,7 @@ function LoadJSONCtoJSON(view) {
 
         DevGizmos.contentData.editor1.onDidChangeModelContent(function (e) {
             var formattedJson = DevGizmos.contentData.editor1.getValue().replace(/\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g, (m, g) => g ? "" : m);
+            formattedJson = JSON.stringify(JSON.parse(formattedJson), null, "\t");
             DevGizmos.contentData.editor2.setValue(formattedJson);
         });
 
