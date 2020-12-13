@@ -19,3 +19,7 @@ span.LoadingText{
     width:20%;
     text-align:center
 }
+
+.editor {
+    border: 1px solid black;
+}

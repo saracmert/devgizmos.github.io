@@ -1,12 +1,17 @@
 [
     {
-        "Name": "JSONC to JSON Converter",
-        "Description": "Convert your JSONC files to valid JSON files.",
-        "Page": "JSONCtoJSON"
-    },
-    {
-        "Name": "JSON Beautifier",
-        "Description": "Beautify your JSON files.",
-        "Page": "JSONBeautifier"
+        "Name": "JSON Gizmos",
+        "Tools": [
+            {
+                "Name": "JSONC to JSON Converter",
+                "Description": "Convert your JSONC files to valid JSON files.",
+                "Page": "JSONCtoJSON"
+            },
+            {
+                "Name": "JSON Beautifier",
+                "Description": "Beautify your JSON files.",
+                "Page": "JSONBeautifier"
+            }
+        ]
     }
 ]

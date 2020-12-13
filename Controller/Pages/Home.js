@@ -4,7 +4,7 @@ function LoadHome(view) {
         type: "GET",
         async: false,
         success: function (data) {
-            DevGizmos.contentData.Tools = data;
+            DevGizmos.contentData.Groups = data;
             $("#m_content").html(Handlebars.compile(view)(DevGizmos.contentData));
             DevGizmos.hideLoading();
         },

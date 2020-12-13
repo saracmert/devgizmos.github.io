@@ -1,4 +1,10 @@
 <div class="container">
+    {{#each Groups}}
+    <div class="row">
+        <div class="col-12">
+            <h1>{{Name}}</h1>
+        </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-2">
         {{#each Tools}}
         <div class="col">
@@ -17,4 +23,5 @@
         </div>
         {{/each}}
     </div>
+    {{/each}}
 </div>
