@@ -13,5 +13,15 @@
                 "Page": "JSONBeautifier"
             }
         ]
+    },
+    {
+        "Name": "Javascript Gizmos",
+        "Tools": [
+            {
+                "Name": "Javascript KeyCode Finder",
+                "Description": "Gizmo that allows you to find the javascript key code.",
+                "Page": "JSKeyCode"
+            }
+        ]
     }
 ]

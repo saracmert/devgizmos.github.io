@@ -71,6 +71,9 @@ var DevGizmos = {
         
                         var element = document.getElementById("ContentScript");
                         if (element != null) {
+                            if (typeof UnloadPage !== "undefined") { 
+                                UnloadPage();
+                            }
                             element.parentNode.removeChild(element);
                         }
         
