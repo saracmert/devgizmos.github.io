@@ -1,0 +1,37 @@
+<div class="container-fluid h-100">
+    <div class="row">
+        <div class="col">
+            <h1>Guid Generator</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center h-100">
+        <div class="mb-3">
+            <label for="txtCount" class="form-label">
+                <strong>Count</strong>
+            </label>
+            <input class="form-control" type="number" value="1" min="1" id="txtCount">
+        </div>
+        <div class="mb-3">
+            <input class="form-check-input" type="checkbox" id="cbUppercase">
+            <label for="cbUppercase" class="form-label">
+                <strong>Uppercase</strong>
+            </label>
+        </div>
+        <div class="mb-3">
+            <div class="d-grid gap-2">
+                <a href="javascript:void(0);" onclick="GenerateGuids();" class="btn btn-primary">Generate Guids</a>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="txtGuids" class="form-label">
+                <strong>Guids</strong>
+            </label>
+            <textarea id="txtGuids" class="form-control" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <div class="d-grid gap-2">
+                <a href="javascript:void(0);" onclick="JSHelpers.copy(document.getElementById('txtGuids'));" class="btn btn-secondary">Copy</a>
+            </div>
+        </div>
+    </div>
+</div>

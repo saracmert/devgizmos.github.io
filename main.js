@@ -1,9 +1,16 @@
 var JSHelpers = {
     generateGuid: function () {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
+        const ho = (n, p) => n.toString(16).padStart(p, 0); /// Return the hexadecimal text representation of number `n`, padded with zeroes to be of length `p`
+        const view = new DataView(new ArrayBuffer(16)); /// Create a view backed by a 16-byte buffer
+        crypto.getRandomValues(new Uint8Array(view.buffer)); /// Fill the buffer with random data
+        view.setUint8(6, (view.getUint8(6) & 0xf) | 0x40); /// Patch the 6th byte to reflect a version 4 UUID
+        view.setUint8(8, (view.getUint8(8) & 0x3f) | 0x80); /// Patch the 8th byte to reflect a variant 1 UUID (version 4 UUIDs are)
+        return `${ho(view.getUint32(0), 8)}-${ho(view.getUint16(4), 4)}-${ho(view.getUint16(6), 4)}-${ho(view.getUint16(8), 4)}-${ho(view.getUint32(10), 8)}${ho(view.getUint16(14), 4)}`; /// Compile the canonical textual form from the array data
+    },
+    copy: function (input) {
+        input.select();
+        input.setSelectionRange(0, 99999);
+        document.execCommand("copy");
     }
 };
 
@@ -39,7 +46,7 @@ var DevGizmos = {
             },
             error: DevGizmos.displayAjaxError
         });
-        
+
         $.ajax({
             url: "Content/Generic/footer.html?r=" + JSHelpers.generateGuid(),
             type: "GET",
@@ -68,20 +75,20 @@ var DevGizmos = {
                     async: true,
                     success: function (js) {
                         _js = js;
-        
+
                         var element = document.getElementById("ContentScript");
                         if (element != null) {
-                            if (typeof UnloadPage !== "undefined") { 
+                            if (typeof UnloadPage !== "undefined") {
                                 UnloadPage();
                             }
                             element.parentNode.removeChild(element);
                         }
-        
+
                         var script = document.createElement("script");
                         script.id = "ContentScript";
                         script.innerHTML = _js;
                         document.body.appendChild(script);
-        
+
                         if (_view != null && _js != null) {
                             window["Load" + name](_view);
                         }
@@ -115,5 +122,5 @@ $(document).ready(function () {
         DevGizmos.loadPage(pageName);
     }
 
-    $("body").css({'padding-top': document.querySelector("#m_header > div > nav").offsetHeight + 10});
+    $("body").css({ 'padding-top': document.querySelector("#m_header > div > nav").offsetHeight + 10 });
 });
