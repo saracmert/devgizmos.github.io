@@ -29,7 +29,7 @@
         "Tools":[
             {
                 "Name": "Guid Generator",
-                "Description": "Quickly generate a compliant version 4 GUID using our online tool",
+                "Description": "Quickly generate a compliant version 4 GUID using our online tool.",
                 "Page": "GuidGenerator"
             }
         ]

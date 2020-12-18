@@ -31,6 +31,12 @@ var DevGizmos = {
 
         if (window.location.search == "") {
             window.history.pushState(null, null, "#!" + name);
+
+            try {
+                gtag('config', 'G-8B7VWF3KW3', {'page_path': '/#!' + name});
+            } catch (err) {
+                console.error(err);
+            }
         }
 
         return false;
