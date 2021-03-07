@@ -23,3 +23,8 @@ span.LoadingText{
 .editor {
     border: 1px solid black;
 }
+
+.badge-primary {
+    color: #fff;
+    background-color: #007bff;
+}

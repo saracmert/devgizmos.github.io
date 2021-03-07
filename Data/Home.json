@@ -25,6 +25,17 @@
         ]
     },
     {
+        "Name": "C# Gizmos",
+        "Tools":[
+            {
+                "Name": "C# String Builder",
+                "Description": "Automatic StringBuilder escaper code generation.",
+                "Page": "StringBuilder",
+                "NewBadge": true
+            }
+        ]
+    },
+    {
         "Name": "Other Gizmos",
         "Tools":[
             {
