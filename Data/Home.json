@@ -42,6 +42,11 @@
                 "Name": "Guid Generator",
                 "Description": "Quickly generate a compliant version 4 GUID using our online tool.",
                 "Page": "GuidGenerator"
+            },
+            {
+                "Name": "Base64 Encode - Decoder",
+                "Description": "Quickly encode or decode Base64 using our online tool.",
+                "Page": "Base64EncodeDecode"
             }
         ]
     }
