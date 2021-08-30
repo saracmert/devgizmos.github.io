@@ -127,6 +127,4 @@ $(document).ready(function () {
     } else {
         DevGizmos.loadPage(pageName);
     }
-
-    $("body").css({ 'padding-top': document.querySelector("#m_header > div > nav").offsetHeight + 10 });
 });

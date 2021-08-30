@@ -10,14 +10,14 @@ function LoadBase64EncodeDecode(view) {
         DevGizmos.contentData.editor1 = monaco.editor.create(document.getElementById('editor1'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs',
+            theme: halfmoon.darkModeOn ? 'vs-dark' : 'vs',
             wordWrap: 'on'
         });
 
         DevGizmos.contentData.editor2 = monaco.editor.create(document.getElementById('editor2'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs',
+            theme: halfmoon.darkModeOn ? 'vs-dark' : 'vs',
             wordWrap: 'on',
             readOnly: true
         });

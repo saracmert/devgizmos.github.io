@@ -11,14 +11,14 @@ function LoadJSONBeautifier(view) {
         DevGizmos.contentData.editor1 = monaco.editor.create(document.getElementById('editor1'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs',
+            theme: halfmoon.darkModeOn ? 'vs-dark' : 'vs',
             wordWrap: 'on'
         });
 
         DevGizmos.contentData.editor2 = monaco.editor.create(document.getElementById('editor2'), {
             value: [].join('\n'),
             language: 'json',
-            theme: 'vs',
+            theme: halfmoon.darkModeOn ? 'vs-dark' : 'vs',
             wordWrap: 'on',
             readOnly: true
         });
@@ -50,8 +50,8 @@ function ValidateJSON(json) {
 }
 
 function ResizeEditor() {
-    $("#editor1").height(window.innerHeight - 150);
-    $("#editor2").height(window.innerHeight - 150);
+    $("#editor1").height(window.innerHeight - 155);
+    $("#editor2").height(window.innerHeight - 155);
     DevGizmos.contentData.editor1.layout();
     DevGizmos.contentData.editor2.layout();
 }
